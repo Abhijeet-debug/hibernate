@@ -1,11 +1,12 @@
-package com.onetoone;
+package com.onetomany;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-//@Entity
+@Entity
 public class Answer {
 
 	@Id
@@ -14,8 +15,8 @@ public class Answer {
 
 	private String answer;
 
-//	@OneToOne
-	@OneToOne(mappedBy = "answer")
+	@ManyToOne
+	//@JoinColumn(name = "q_id")
 	private Question question;
 
 	public int getAnswerId() {
@@ -42,10 +43,11 @@ public class Answer {
 		this.question = question;
 	}
 
-	public Answer(int answerId, String answer) {
+	public Answer(int answerId, String answer, Question question) {
 		super();
 		this.answerId = answerId;
 		this.answer = answer;
+		this.question = question;
 	}
 
 	public Answer() {
@@ -53,9 +55,15 @@ public class Answer {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Answer(int answerId, String answer) {
+		super();
+		this.answerId = answerId;
+		this.answer = answer;
+	}
+
 	@Override
 	public String toString() {
-		return "Answer [answerId=" + answerId + ", answer=" + answer + "]";
+		return "Answer [answerId=" + answerId + ", answer=" + answer + ", question=" + question + "]";
 	}
 
 }

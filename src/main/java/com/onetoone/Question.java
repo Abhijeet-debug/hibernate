@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
-@Entity
+//@Entity
 public class Question {
 
 	@Id
