@@ -26,6 +26,8 @@
 		<mapping class="com.onetoone.Answer" />
 		<mapping class="com.onetomany.Question" />
 		<mapping class="com.onetomany.Answer" />
+		<mapping class="com.manytomany.Employee" />
+		<mapping class="com.manytomany.Project" />
 
 
 	</session-factory>

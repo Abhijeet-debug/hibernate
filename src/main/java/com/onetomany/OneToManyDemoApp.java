@@ -37,11 +37,11 @@ public class OneToManyDemoApp {
 		session.save(a2);
 		session.save(a3);
 
-		Question question1 = (Question) session.get(Question.class, 121);
-		System.out.println(question1.getQuestion());
-		for (Answer a : question1.getAnswers()) {
-			System.out.println(a.getAnswer());
-		}
+//		Question question1 = (Question) session.get(Question.class, 121);
+//		System.out.println(question1.getQuestion());
+//		for (Answer a : question1.getAnswers()) {
+//			System.out.println(a.getAnswer());
+//		}
 
 		tx.commit();
 		session.close();
